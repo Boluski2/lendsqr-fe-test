@@ -1,6 +1,6 @@
 import React from 'react';
 import { Search, Bell, ChevronDown, Menu } from 'lucide-react';
-import LendsqrLogo from './LendsqrLogo';
+import lendsqrLogoImage from '@/assets/lendsqrLogoImage.png'; 
 import profile_image from '../assets/profile_image.png';
 import '../styles/components/Header.scss';
 
@@ -13,7 +13,11 @@ const Header: React.FC<HeaderProps> = ({ onMenuToggle }) => {
     <header className="header">
       <div className="header__left">
         <div className="header__logo">
-          <LendsqrLogo />
+          <img 
+            src={lendsqrLogoImage} 
+            alt="Lendsqr Logo" 
+            className="login__logo-image"
+            />
         </div>
         
         <div className="header__search">

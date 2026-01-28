@@ -23,14 +23,19 @@
     gap: $spacing-xl;
   }
   
-  &__logo {
-    flex-shrink: 0;
+  // &__logo {
+  //   flex-shrink: 0;
     
-    svg {
-      height: 30px;
-      width: auto;
-    }
-  }
+  //   svg {
+  //     height: 30px;
+  //     width: auto;
+  //   }
+  // }
+
+.login__logo-image {
+  width: 145px; 
+  height: auto; 
+}
   
   &__search {
     display: flex;
