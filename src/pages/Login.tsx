@@ -28,14 +28,16 @@ const Login: React.FC = () => {
   return (
     <div className="login">
       <div className="login__left">
-        <div className="login__logo">
-          <LendsqrLogo />
-        </div>
-        <div className="login__illustration">
-          <img 
-            src={loginIllustration} 
-            alt="Person with colorful geometric shapes illustration" 
-          />
+        <div className="login__left-content">
+          <div className="login__logo">
+            <LendsqrLogo />
+          </div>
+          <div className="login__illustration">
+            <img 
+              src={loginIllustration} 
+              alt="Person with colorful geometric shapes illustration" 
+            />
+          </div>
         </div>
       </div>
       
