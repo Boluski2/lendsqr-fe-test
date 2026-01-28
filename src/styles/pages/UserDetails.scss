@@ -175,9 +175,9 @@
   
   &__tabs {
     @include flex-start;
-    gap: $spacing-xxxl;
+    gap: $spacing-xxl;
     margin-top: 30px;
-    overflow-x: auto;
+    // overflow-x: auto;
     @include custom-scrollbar;
     -webkit-overflow-scrolling: touch;
     padding-bottom: $spacing-sm;
