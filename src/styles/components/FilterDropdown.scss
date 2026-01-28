@@ -1,0 +1,115 @@
+@import '../variables';
+@import '../mixins';
+
+.filter-dropdown {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 270px;
+  background-color: $background-white;
+  border: 1px solid $border-light;
+  border-radius: $border-radius-sm;
+  box-shadow: $shadow-dropdown;
+  z-index: $z-index-dropdown;
+  padding: $spacing-lg;
+  
+  @include mobile {
+    width: calc(100vw - 32px);
+    max-width: 320px;
+    left: 0;
+    right: 0;
+  }
+  
+  &__field {
+    margin-bottom: $spacing-md;
+    
+    &:last-of-type {
+      margin-bottom: $spacing-lg;
+    }
+  }
+  
+  &__label {
+    display: block;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    color: $text-secondary;
+    margin-bottom: $spacing-sm;
+  }
+  
+  &__input,
+  &__select {
+    @include input-base;
+    padding: 12px;
+    font-size: $font-size-sm;
+    
+    &::placeholder {
+      color: $text-secondary;
+      opacity: 0.8;
+    }
+    
+    &[type="date"] {
+      color: $text-secondary;
+      
+      &::-webkit-datetime-edit-text,
+      &::-webkit-datetime-edit-month-field,
+      &::-webkit-datetime-edit-day-field,
+      &::-webkit-datetime-edit-year-field {
+        color: $text-secondary;
+      }
+      
+      &:not(:valid):before {
+        content: attr(placeholder);
+        color: $text-secondary;
+        opacity: 0.8;
+      }
+    }
+  }
+  
+  &__select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23545F7D' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 40px;
+    cursor: pointer;
+  }
+  
+  &__actions {
+    display: flex;
+    gap: $spacing-md;
+  }
+  
+  &__btn {
+    flex: 1;
+    padding: 12px;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-semibold;
+    border-radius: $border-radius-md;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    
+    &--reset {
+      background-color: transparent;
+      border: 1px solid $text-secondary;
+      color: $text-secondary;
+      
+      &:hover {
+        background-color: $background-light;
+      }
+    }
+    
+    &--filter {
+      background-color: $primary;
+      border: none;
+      color: $background-white;
+      
+      &:hover {
+        background-color: darken($primary, 5%);
+      }
+    }
+  }
+}
+
+.filter-container {
+  position: relative;
+}

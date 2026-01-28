@@ -1,0 +1,342 @@
+@import '../variables';
+@import '../mixins';
+
+.login {
+  min-height: 100vh;
+  display: flex;
+  background-color: $background-white;
+  
+  @include mobile {
+    flex-direction: column;
+  }
+  
+  &__left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: $spacing-xxl;
+    background-color: $background-white;
+    
+    @include mobile {
+      padding: $spacing-lg;
+      min-height: auto;
+    }
+  }
+  
+  &__logo {
+    margin-bottom: $spacing-xxl;
+    
+    img {
+      height: 36px;
+      width: auto;
+    }
+    
+    @include mobile {
+      margin-bottom: $spacing-lg;
+    }
+  }
+  
+  &__illustration {
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    
+    img {
+      width: 100%;
+      height: auto;
+    }
+    
+    @include mobile {
+      max-width: 300px;
+      margin-bottom: $spacing-lg;
+    }
+  }
+  
+  &__right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: $spacing-xxl;
+    
+    @include mobile {
+      padding: $spacing-lg;
+    }
+  }
+  
+  &__form-container {
+    width: 100%;
+    max-width: 447px;
+  }
+  
+  &__title {
+    font-family: $font-family-avenir;
+    font-size: $font-size-xxl;
+    font-weight: $font-weight-bold;
+    color: $secondary;
+    margin-bottom: $spacing-sm;
+    
+    @include mobile {
+      font-size: 32px;
+    }
+  }
+  
+  &__subtitle {
+    font-size: 20px;
+    color: $text-secondary;
+    margin-bottom: $spacing-xxl;
+    
+    @include mobile {
+      margin-bottom: $spacing-lg;
+    }
+  }
+  
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-lg;
+  }
+  
+  &__input-group {
+    position: relative;
+  }
+  
+  &__input {
+    @include input-base;
+    padding: 18px 16px;
+    font-size: 14px;
+    border: 2px solid rgba($text-secondary, 0.15);
+    border-radius: 5px;
+    
+    &::placeholder {
+      color: $text-secondary;
+      opacity: 0.6;
+    }
+    
+    &:focus {
+      border-color: $primary;
+    }
+  }
+  
+  &__show-password {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: $primary;
+    font-size: $font-size-xs;
+    font-weight: $font-weight-semibold;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    cursor: pointer;
+    padding: 0;
+    
+    &:hover {
+      color: darken($primary, 10%);
+    }
+  }
+  
+  &__forgot-password {
+    display: inline-block;
+    color: $primary;
+    font-size: $font-size-xs;
+    font-weight: $font-weight-semibold;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-top: $spacing-xs;
+    
+    &:hover {
+      color: darken($primary, 10%);
+    }
+  }
+  
+  &__submit {
+    @include button-primary;
+    width: 100%;
+    padding: 16px;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-semibold;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-radius: $border-radius-md;
+    margin-top: $spacing-md;
+    
+    &:hover:not(:disabled) {
+      background-color: darken($primary, 8%);
+      transform: translateY(-1px);
+    }
+    
+    &:active:not(:disabled) {
+      transform: translateY(0);
+    }
+  }
+}
+
+
+
+
+// .login {
+//   min-height: 100vh;
+//   display: flex;
+//   align-items: center;
+//   background-color: #ffffff;
+//   font-family: 'Avenir', 'Inter', sans-serif;
+// }
+
+// /* =========================
+//    LEFT SIDE (IMAGE)
+// ========================= */
+// .login__left {
+//   flex: 1;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;      /* aligns image with form */
+//   align-items: center;
+//   background-color: #f7f7f7;    /* dark white */
+//   // padding: 80px;
+//   position: relative;
+// }
+
+// .login__logo {
+//   position: absolute;
+//   top: 40px;
+//   left: 60px;
+// }
+
+// .login__illustration {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
+
+// .login__illustration img {
+//   max-width: 100%;
+//   height: auto;
+// }
+
+// /* =========================
+//    RIGHT SIDE (FORM)
+// ========================= */
+// .login__right {
+//   flex: 1;
+//   display: flex;
+//   align-items: center;          /* aligns with image */
+//   justify-content: center;
+//   padding: 80px;
+//   background-color: #ffffff;
+// }
+
+// .login__form-container {
+//   width: 100%;
+//   max-width: 447px;
+// }
+
+// /* =========================
+//    TEXT
+// ========================= */
+// .login__title {
+//   font-size: 40px;
+//   font-weight: 700;
+//   color: #213f7d;
+//   margin-bottom: 10px;
+// }
+
+// .login__subtitle {
+//   font-size: 16px;
+//   color: #545f7d;
+//   margin-bottom: 40px;
+// }
+
+// /* =========================
+//    FORM
+// ========================= */
+// .login__form {
+//   display: flex;
+//   flex-direction: column;
+//   gap: 24px;
+// }
+
+// .login__input-group {
+//   position: relative;
+// }
+
+// .login__input {
+//   width: 100%;
+//   height: 50px;
+//   padding: 0 16px;
+//   border: 2px solid #e5e7eb;
+//   border-radius: 5px;
+//   font-size: 14px;
+//   outline: none;
+//   transition: border 0.2s ease;
+// }
+
+// .login__input:focus {
+//   border-color: #39cdcc;
+// }
+
+// .login__show-password {
+//   position: absolute;
+//   right: 16px;
+//   top: 50%;
+//   transform: translateY(-50%);
+//   background: none;
+//   border: none;
+//   font-size: 12px;
+//   font-weight: 600;
+//   color: #39cdcc;
+//   cursor: pointer;
+// }
+
+// /* =========================
+//    LINKS & BUTTON
+// ========================= */
+// .login__forgot-password {
+//   font-size: 12px;
+//   font-weight: 600;
+//   color: #39cdcc;
+//   text-transform: uppercase;
+//   text-decoration: none;
+// }
+
+// .login__submit {
+//   height: 50px;
+//   border-radius: 8px;
+//   background-color: #39cdcc;
+//   color: #ffffff;
+//   font-size: 14px;
+//   font-weight: 600;
+//   letter-spacing: 1px;
+//   border: none;
+//   cursor: pointer;
+//   transition: opacity 0.2s ease;
+// }
+
+// .login__submit:hover {
+//   opacity: 0.9;
+// }
+
+// .login__submit:disabled {
+//   opacity: 0.6;
+//   cursor: not-allowed;
+// }
+
+// /* =========================
+//    RESPONSIVE (MOBILE)
+// ========================= */
+// @media (max-width: 768px) {
+//   .login {
+//     flex-direction: column;
+//   }
+
+//   .login__left {
+//     display: none; /* same as Lendsqr mobile behavior */
+//   }
+
+//   .login__right {
+//     padding: 40px 24px;
+//   }
+// }

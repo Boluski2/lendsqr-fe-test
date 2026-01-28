@@ -1,0 +1,176 @@
+@import '../variables';
+@import '../mixins';
+
+.users-table {
+  @include card;
+  overflow: hidden;
+  
+  &__wrapper {
+    overflow-x: auto;
+    @include custom-scrollbar;
+  }
+  
+  &__table {
+    width: 100%;
+    min-width: 900px;
+    border-collapse: collapse;
+  }
+  
+  &__header {
+    background-color: $background-white;
+    
+    th {
+      padding: 16px 20px;
+      text-align: left;
+      font-size: $font-size-xs;
+      font-weight: $font-weight-semibold;
+      color: $text-secondary;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      border-bottom: 1px solid $border-light;
+      white-space: nowrap;
+      
+      &:first-child {
+        padding-left: 30px;
+      }
+      
+      &:last-child {
+        padding-right: 30px;
+      }
+    }
+  }
+  
+  &__header-content {
+    @include flex-start;
+    gap: $spacing-sm;
+    cursor: pointer;
+    
+    &:hover {
+      color: $secondary;
+    }
+    
+    svg {
+      width: 16px;
+      height: 16px;
+      opacity: 0.6;
+    }
+  }
+  
+  &__body {
+    tr {
+      border-bottom: 1px solid $border-light;
+      transition: background-color 0.2s ease;
+      
+      &:hover {
+        background-color: rgba($primary, 0.02);
+      }
+      
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+    
+    td {
+      padding: 16px 20px;
+      font-size: $font-size-sm;
+      color: $text-secondary;
+      vertical-align: middle;
+      
+      &:first-child {
+        padding-left: 30px;
+      }
+      
+      &:last-child {
+        padding-right: 30px;
+      }
+    }
+  }
+  
+  &__actions {
+    position: relative;
+  }
+  
+  &__actions-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: $spacing-xs;
+    
+    svg {
+      width: 20px;
+      height: 20px;
+      color: $text-secondary;
+    }
+    
+    &:hover svg {
+      color: $secondary;
+    }
+  }
+  
+  &__actions-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    min-width: 180px;
+    background-color: $background-white;
+    border: 1px solid $border-light;
+    border-radius: $border-radius-sm;
+    box-shadow: $shadow-dropdown;
+    z-index: $z-index-dropdown;
+    padding: $spacing-sm 0;
+  }
+  
+  &__action-item {
+    @include flex-start;
+    gap: $spacing-sm;
+    width: 100%;
+    padding: $spacing-sm $spacing-md;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: $font-size-sm;
+    color: $text-secondary;
+    text-align: left;
+    transition: background-color 0.2s ease;
+    
+    &:hover {
+      background-color: $background-light;
+      color: $secondary;
+    }
+    
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 18px;
+  border-radius: 100px;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-regular;
+  
+  &--active {
+    background-color: $status-active-bg;
+    color: $status-active;
+  }
+  
+  &--pending {
+    background-color: $status-pending-bg;
+    color: $status-pending;
+  }
+  
+  &--blacklisted {
+    background-color: $status-blacklisted-bg;
+    color: $status-blacklisted;
+  }
+  
+  &--inactive {
+    background-color: $status-inactive-bg;
+    color: $status-inactive;
+  }
+}

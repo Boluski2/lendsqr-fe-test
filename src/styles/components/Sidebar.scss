@@ -1,0 +1,154 @@
+@import '../variables';
+@import '../mixins';
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: $header-height;
+  width: $sidebar-width;
+  height: calc(100vh - #{$header-height});
+  background-color: $background-white;
+  border-right: 1px solid $border-light;
+  box-shadow: $shadow-sidebar;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: $z-index-sidebar;
+  transition: transform 0.3s ease;
+  @include custom-scrollbar;
+  
+  @include mobile {
+    transform: translateX(-100%);
+    
+    &--open {
+      transform: translateX(0);
+    }
+  }
+  
+  &__content {
+    padding: $spacing-lg 0;
+  }
+  
+  &__switch {
+    @include flex-start;
+    gap: $spacing-sm;
+    padding: 16px 30px;
+    color: $secondary;
+    font-size: $font-size-base;
+    font-weight: $font-weight-regular;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    
+    &:hover {
+      color: $primary;
+    }
+    
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+  
+  &__section {
+    margin-top: $spacing-lg;
+    
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
+  
+  &__section-title {
+    @include caption-text;
+    padding: 10px 30px;
+    font-size: $font-size-xs;
+    font-weight: $font-weight-medium;
+    color: $secondary;
+    opacity: 0.5;
+  }
+  
+  &__nav {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  &__item {
+    @include flex-start;
+    gap: $spacing-sm;
+    padding: 10px 30px;
+    color: $text-secondary;
+    font-weight: $font-weight-regular;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    position: relative;
+    border-left: 3px solid transparent;
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    
+    svg {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+      opacity: 0.8;
+    }
+    
+    &:hover {
+      background-color: $primary-light;
+      color: $secondary;
+      border-left-color: $primary;
+    }
+    
+    &--active {
+      background-color: $primary-light;
+      color: $secondary;
+      border-left-color: $primary;
+      
+      svg {
+        opacity: 1;
+      }
+    }
+  }
+  
+  &__item-text {
+    @include truncate;
+  }
+  
+  &__logout {
+    margin-top: $spacing-xl;
+    padding-top: $spacing-lg;
+    border-top: 2px solid $border-light;
+    
+    .sidebar__item {
+      border-left: none; 
+      
+      &:hover {
+        border-left: none; 
+        background-color: $primary-light;
+        color: $secondary;
+      }
+    }
+  }
+  
+  &__version {
+    padding: 10px 30px;
+    font-size: $font-size-xs;
+    color: $text-secondary;
+    opacity: 0.6;
+  }
+}
+
+// Overlay for mobile
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: calc(#{$z-index-sidebar} - 1);
+  
+  @include mobile {
+    &--visible {
+      display: block;
+    }
+  }
+}

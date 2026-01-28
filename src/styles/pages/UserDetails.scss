@@ -1,0 +1,316 @@
+@import '../variables';
+@import '../mixins';
+
+.user-details {
+  &__back {
+    @include flex-start;
+    gap: $spacing-sm;
+    color: $text-secondary;
+    font-size: $font-size-base;
+    margin-bottom: $spacing-lg;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    
+    &:hover {
+      color: $secondary;
+    }
+    
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  
+  &__header {
+    @include flex-between;
+    flex-wrap: wrap;
+    gap: $spacing-md;
+    margin-bottom: $spacing-lg;
+    
+    @include mobile {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+  
+  &__title {
+    font-size: $font-size-xl;
+    font-weight: $font-weight-medium;
+    color: $secondary;
+  }
+  
+  &__actions {
+    @include flex-start;
+    gap: $spacing-md;
+  }
+  
+  &__btn {
+    @include button-base;
+    padding: 12px 20px;
+    font-size: $font-size-sm;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    
+    &--danger {
+      @include button-outline-danger;
+    }
+    
+    &--primary {
+      @include button-outline;
+    }
+  }
+  
+  &__profile-card {
+    @include card;
+    padding: 30px;
+    margin-bottom: $spacing-lg;
+  }
+  
+  &__profile-header {
+    @include flex-start;
+    gap: $spacing-md;
+    padding-bottom: 30px;
+    border-bottom: 1px solid $border-dark;
+    flex-wrap: wrap;
+    
+    @include mobile {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  }
+  
+  &__avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: $border-radius-full;
+    background-color: rgba($secondary, 0.1);
+    @include flex-center;
+    flex-shrink: 0;
+    
+    svg {
+      width: 40px;
+      height: 40px;
+      color: $secondary;
+    }
+  }
+  
+  &__profile-info {
+    // flex: 1;
+  }
+  
+  &__name {
+    font-size: 22px;
+    font-weight: $font-weight-medium;
+    color: $secondary;
+    margin-bottom: 4px;
+  }
+  
+  &__id {
+    font-size: $font-size-sm;
+    color: $text-secondary;
+  }
+  
+  &__tier {
+    padding-left: $spacing-md;
+    border-left: 2px solid $border-dark;
+    
+    @include mobile {
+      padding-left: 0;
+      border-left: none;
+      padding-top: $spacing-md;
+      border-top: 1px solid $border-dark;
+    }
+  }
+  
+  &__tier-label {
+    font-size: $font-size-sm;
+    color: $text-secondary;
+    margin-bottom: 4px;
+  }
+  
+  &__tier-stars {
+    @include flex-start;
+    gap: 4px;
+    
+    svg {
+      width: 16px;
+      height: 16px;
+      
+      &.filled {
+        color: #E9B200;
+        fill: #E9B200;
+      }
+      
+      &.empty {
+        color: #E9B200;
+        fill: transparent;
+      }
+    }
+  }
+  
+  &__balance {
+    padding-left: $spacing-md;
+    border-left: 2px solid $border-dark;
+    
+    @include mobile {
+      padding-left: 0;
+      border-left: none;
+      padding-top: $spacing-md;
+      border-top: 1px solid $border-dark;
+    }
+  }
+  
+  &__balance-amount {
+    font-size: 22px;
+    font-weight: $font-weight-medium;
+    color: $secondary;
+    margin-bottom: 4px;
+  }
+  
+  &__balance-account {
+    font-size: $font-size-xs;
+    color: $text-secondary;
+  }
+  
+  &__tabs {
+    @include flex-start;
+    gap: $spacing-xxxl;
+    margin-top: 30px;
+    overflow-x: auto;
+    @include custom-scrollbar;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: $spacing-sm;
+    
+    @include mobile {
+      gap: $spacing-sm;
+    }
+  }
+  
+  &__tab {
+    padding: 10px 24px;
+    font-size: $font-size-base;
+    color: $text-secondary;
+    background: none;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease;
+    
+    &:hover {
+      color: $primary;
+    }
+    
+    &--active {
+      color: $primary;
+      border-bottom-color: $primary;
+    }
+    
+    @include mobile {
+      padding: 10px 16px;
+      font-size: $font-size-sm;
+    }
+  }
+  
+  &__content {
+    @include card;
+    padding: 30px;
+    
+    @include mobile {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+  
+  &__section {
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid $border-dark;
+    
+    &:last-child {
+      padding-bottom: 0;
+      margin-bottom: 0;
+      border-bottom: none;
+    }
+  }
+  
+  &__section-title {
+    font-size: $font-size-base;
+    font-weight: $font-weight-medium;
+    color: $secondary;
+    margin-bottom: $spacing-lg;
+  }
+  
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    
+    @include tablet {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    
+    @include mobile {
+      grid-template-columns: repeat(2, 1fr);
+      min-width: 500px;
+    }
+  }
+  
+  &__field {
+    &-label {
+      font-size: $font-size-xs;
+      color: $text-secondary;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 8px;
+    }
+    
+    &-value {
+      font-size: $font-size-base;
+      color: $secondary;
+      font-weight: $font-weight-medium;
+      word-break: break-word;
+    }
+  }
+  
+  &__guarantor {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid $border-dark;
+    
+    &:last-child {
+      padding-bottom: 0;
+      margin-bottom: 0;
+      border-bottom: none;
+    }
+    
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  &__loading,
+  &__error {
+    @include flex-center;
+    @include flex-column;
+    min-height: 400px;
+    gap: $spacing-md;
+  }
+  
+  &__error {
+    color: $status-blacklisted;
+    
+    button {
+      @include button-primary;
+      padding: 12px 24px;
+    }
+  }
+}

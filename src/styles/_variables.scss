@@ -1,0 +1,103 @@
+// Lendsqr Design System Variables
+
+// Colors
+$primary: #39CDCC;
+$primary-light: #E5F6F6;
+$secondary: #213F7D;
+$secondary-light: #545F7D;
+
+// Background colors
+$background-white: #FFFFFF;
+$background-light: #FBFBFB;
+$background-gray: #F5F7F8;
+
+// Status colors
+$status-active: #39CD62;
+$status-active-bg: rgba(57, 205, 98, 0.06);
+$status-pending: #E9B200;
+$status-pending-bg: rgba(233, 178, 0, 0.1);
+$status-blacklisted: #E4033B;
+$status-blacklisted-bg: rgba(228, 3, 59, 0.1);
+$status-inactive: #545F7D;
+$status-inactive-bg: rgba(84, 95, 125, 0.06);
+
+// Icon colors
+$icon-pink: #DF18FF;
+$icon-purple: #5718FF;
+$icon-orange: #F55F44;
+$icon-red: #E4033B;
+
+// Card icon backgrounds
+$card-bg-pink: rgba(223, 24, 255, 0.1);
+$card-bg-purple: rgba(87, 24, 255, 0.1);
+$card-bg-orange: rgba(245, 95, 68, 0.1);
+$card-bg-red: rgba(228, 3, 59, 0.1);
+
+// Border colors
+$border-color: #213F7D26;
+$border-light: rgba(33, 63, 125, 0.06);
+$border-dark-contrast: rgba(18, 18, 19, 0.1);
+$border-dark: rgba(0, 0, 0, 0.1);
+
+// Text colors
+$text-primary: #213F7D;
+$text-secondary: #545F7D;
+$text-muted: #545F7D;
+
+// Shadows
+$shadow-card: 3px 5px 20px 0px rgba(0, 0, 0, 0.04);
+$shadow-dropdown: 0px 4px 30px 0px rgba(0, 0, 0, 0.1);
+$shadow-sidebar: 0px 5px 20px rgba(0, 0, 0, 0.04);
+
+// Typography
+$font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+$font-family-secondary: 'SF Pro Text', 'Work Sans', sans-serif;
+$font-family-avenir: 'Avenir Next', 'Work Sans', sans-serif;
+
+// Font sizes
+$font-size-xs: 12px;
+$font-size-sm: 14px;
+$font-size-base: 16px;
+$font-size-lg: 18px;
+$font-size-xl: 24px;
+$font-size-xxl: 40px;
+
+// Font weights
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// Spacing
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+$spacing-xxl: 48px;
+$spacing-xxxl: 96px;
+$spacing-width: 300px;
+
+// Border radius
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 12px;
+$border-radius-full: 50%;
+
+// Sidebar
+$sidebar-width: 283px;
+$sidebar-collapsed-width: 70px;
+$header-height: 100px;
+
+// Breakpoints
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+$breakpoint-xxl: 1400px;
+
+// Z-index
+$z-index-sidebar: 100;
+$z-index-header: 200;
+$z-index-modal: 300;
+$z-index-dropdown: 150;

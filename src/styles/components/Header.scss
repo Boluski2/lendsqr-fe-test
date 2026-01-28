@@ -1,0 +1,189 @@
+@import '../variables';
+@import '../mixins';
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: $header-height;
+  background-color: $background-white;
+  border-bottom: 1px solid $border-light;
+  box-shadow: $shadow-card;
+  z-index: $z-index-header;
+  padding: 0 30px;
+  @include flex-between;
+  
+  @include mobile {
+    padding: 0 $spacing-md;
+  }
+  
+  &__left {
+    @include flex-start;
+    gap: $spacing-xl;
+  }
+  
+  &__logo {
+    flex-shrink: 0;
+    
+    svg {
+      height: 30px;
+      width: auto;
+    }
+  }
+  
+  &__search {
+    display: flex;
+    max-width: 400px;
+    margin-left: calc(#{$spacing-width} - 160px);
+
+    
+    @include tablet {
+      max-width: 300px;
+      margin-left: calc(#{$sidebar-width} - 200px);
+    }
+    
+    @include mobile {
+      display: none;
+    }
+  }
+  
+  &__search-input {
+    flex: 1;
+    @include input-base;
+    padding: 11px 16px;
+    font-size: $font-size-sm;
+    border: 1px solid rgba($secondary, 0.2);
+    border-right: none;
+    border-radius: $border-radius-md 0 0 $border-radius-md;
+    min-width: 250px;
+    
+    @include tablet {
+      min-width: 180px;
+    }
+    
+    &::placeholder {
+      color: $text-secondary;
+      opacity: 0.6;
+    }
+  }
+  
+  &__search-button {
+    @include flex-center;
+    background-color: $primary;
+    border: none;
+    padding: 0 24px;
+    border-radius: 0 $border-radius-md $border-radius-md 0;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    
+    &:hover {
+      background-color: darken($primary, 5%);
+    }
+    
+    svg {
+      width: 14px;
+      height: 14px;
+      color: $background-white;
+    }
+  }
+  
+  &__right {
+    @include flex-start;
+    gap: $spacing-lg;
+    
+    @include mobile {
+      flex: 1;
+      justify-content: flex-end;
+    }
+  }
+  
+  &__docs {
+    color: $secondary;
+    font-size: $font-size-base;
+    font-weight: $font-weight-regular;
+    text-decoration: underline;
+    
+    &:hover {
+      color: $primary;
+    }
+    
+    @include mobile {
+      display: none;
+    }
+  }
+  
+  &__notification {
+    position: relative;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: $spacing-xs;
+    
+    svg {
+      width: 22px;
+      height: 22px;
+      color: $secondary;
+    }
+    
+    &:hover svg {
+      color: $primary;
+    }
+  }
+  
+  &__user {
+    @include flex-start;
+    gap: $spacing-sm;
+    cursor: pointer;
+  }
+  
+  &__avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: $border-radius-full;
+    object-fit: cover;
+    background-color: $secondary;
+    
+    @include mobile {
+      width: 36px;
+      height: 36px;
+    }
+  }
+  
+  &__username {
+    @include flex-start;
+    gap: 4px;
+    color: $secondary;
+    font-size: $font-size-base;
+    font-weight: $font-weight-medium;
+    
+    svg {
+      width: 12px;
+      height: 12px;
+    }
+    
+    @include mobile {
+      display: none;
+    }
+  }
+  
+  &__menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: $spacing-xs;
+    order: 10; // Push to far right on mobile
+    
+    svg {
+      width: 24px;
+      height: 24px;
+      color: $secondary;
+    }
+    
+    @include mobile {
+      display: flex;
+      margin-left: $spacing-md;
+    }
+  }
+}

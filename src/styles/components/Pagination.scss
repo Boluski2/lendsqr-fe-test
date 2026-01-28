@@ -1,0 +1,102 @@
+@import '../variables';
+@import '../mixins';
+
+.pagination {
+  @include flex-between;
+  margin-top: $spacing-lg;
+  flex-wrap: wrap;
+  gap: $spacing-md;
+  
+  @include mobile {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  &__info {
+    @include flex-start;
+    gap: $spacing-sm;
+    font-size: $font-size-sm;
+    color: $text-secondary;
+  }
+  
+  &__select {
+    padding: 8px 12px;
+    font-size: $font-size-sm;
+    background-color: rgba($secondary, 0.1);
+    border: none;
+    border-radius: $border-radius-md;
+    color: $secondary;
+    font-weight: $font-weight-semibold;
+    cursor: pointer;
+    
+    &:focus {
+      outline: none;
+    }
+  }
+  
+  &__controls {
+    @include flex-start;
+    gap: 4px;
+  }
+  
+  &__btn {
+    @include flex-center;
+    width: 24px;
+    height: 24px;
+    background-color: rgba($secondary, 0.1);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    
+    &:hover:not(:disabled) {
+      background-color: rgba($secondary, 0.2);
+    }
+    
+    &:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+    
+    svg {
+      width: 12px;
+      height: 12px;
+      color: $secondary;
+    }
+  }
+  
+  &__pages {
+    @include flex-start;
+    gap: 4px;
+    margin: 0 $spacing-xs;
+  }
+  
+  &__page {
+    min-width: 24px;
+    height: 24px;
+    padding: 0 6px;
+    background: none;
+    border: none;
+    font-size: $font-size-sm;
+    color: $text-secondary;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    
+    &:hover {
+      color: $secondary;
+      background-color: rgba($secondary, 0.05);
+    }
+    
+    &--active {
+      color: $secondary;
+      font-weight: $font-weight-semibold;
+    }
+  }
+  
+  &__ellipsis {
+    font-size: $font-size-sm;
+    color: $text-secondary;
+    padding: 0 4px;
+  }
+}
