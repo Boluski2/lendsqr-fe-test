@@ -170,6 +170,13 @@
     }
   }
   
+  &__password-hint {
+    font-size: 14px;
+    color: $text-secondary;
+    margin-top: $spacing-xs;
+    margin-bottom: 0;
+  }
+  
   &__forgot-password {
     display: inline-block;
     color: $primary;

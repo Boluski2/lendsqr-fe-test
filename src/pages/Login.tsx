@@ -83,6 +83,8 @@ const Login: React.FC = () => {
               </button>
             </div>
             
+            <p className="login__password-hint">Can be any password</p>
+            
             <a href="#" className="login__forgot-password">
               Forgot Password?
             </a>
